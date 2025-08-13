@@ -20,7 +20,7 @@ Config.whitelist = [
 Config.defaultserver = {
 	id: 'theyakpen',
 	host: '158.69.202.10',
-	port: 8000,
+	port: 443,
 	httpport: 80,
 	altport: 80,
 	registered: false
