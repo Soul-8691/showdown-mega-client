@@ -19,7 +19,7 @@ Config.whitelist = [
 // address bar is `Config.routes.client`.
 Config.defaultserver = {
 	id: 'theyakpen',
-	host: 'play.theyakpen.com',
+	host: 'server.theyakpen.com',
 	port: 8000,
 	httpport: 80,
 	altport: 80,
