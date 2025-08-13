@@ -13,11 +13,11 @@ const debug = true;
 
 process.stdout.write("Syncing data from Git repository... ");
 if (!fs.existsSync('./caches/DH2')) {
-	child_process.execSync('git clone -b soul ' + server_repo + ' caches/DH2', {
+	child_process.execSync('git clone -b typ ' + server_repo + ' caches/DH2', {
 	});
 }
 else
-	child_process.execSync("git pull " + server_repo + ' soul', {cwd: 'caches/DH2'});
+	child_process.execSync("git pull " + server_repo + ' typ', {cwd: 'caches/DH2'});
 
 child_process.execSync('npm run build', {cwd: 'caches/DH2'});
 
