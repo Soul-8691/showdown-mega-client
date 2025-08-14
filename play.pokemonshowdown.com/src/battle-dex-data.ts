@@ -1022,6 +1022,7 @@ const BattleAvatarNumbers: {[k: string]: string} = {
 	292: 'bellelba',
 	293: 'benga',
 	294: 'ash',
+	295: 'ash-kalarie',
 	'#bw2elesa': 'elesa-gen5bw2',
 	'#teamrocket': 'teamrocket',
 	'#yellow': 'yellow',

@@ -18,6 +18,8 @@
  * @license MIT
  */
 
+import { contains } from "jquery";
+
 declare var require: any;
 declare var global: any;
 
@@ -218,11 +220,15 @@ const Dex = new class implements ModdedDex {
 		if (avatar.charAt(0) === '#') {
 			return Dex.resourcePrefix + 'sprites/trainers-custom/' + toID(avatar.substr(1)) + '.png';
 		}
-		if (avatar.includes('.') && window.Config?.server?.registered) {
+		if ((avatar.includes('.') && window.Config?.server?.registered)) {
 			// custom avatar served by the server
 			let protocol = (Config.server.port === 443) ? 'https' : 'http';
 			return protocol + '://' + Config.server.host + ':' + Config.server.port +
 				'/avatars/' + encodeURIComponent(avatar).replace(/\%3F/g, '?');
+		}
+		if (avatar.startsWith('@')) {
+			avatar = avatar.substr(1);
+			return Dex.modResourcePrefix.replace('typ/data/mods/', 'refs/heads/typ/') + 'config/avatars/' + avatar + '.png';
 		}
 		return Dex.resourcePrefix + 'sprites/trainers/' + Dex.sanitizeName(avatar || 'unknown') + '.png';
 	}
